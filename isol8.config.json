@@ -1,0 +1,24 @@
+{
+  "devbox": {
+    "image": "ghcr.io/illusion47586/isol8-devbox:latest",
+    "network": {
+      "allowedHosts": [
+        "api.githubcopilot.com",
+        "copilot-proxy.githubusercontent.com",
+        "github.com",
+        "api.github.com",
+        "uploads.github.com",
+        "objects.githubusercontent.com",
+        "bun.sh",
+        "registry.npmjs.org",
+        "registry.yarnpkg.com",
+        "npmjs.org"
+      ]
+    },
+    "resources": {
+      "memory": "4g",
+      "cpu": 2
+    },
+    "timeout": 1800
+  }
+}

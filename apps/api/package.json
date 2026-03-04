@@ -1,0 +1,24 @@
+{
+  "name": "@maxions/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch --env-file ../../.env src/index.ts",
+    "build": "tsc --noEmit",
+    "start": "bun run --env-file ../../.env src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.17",
+    "p-queue": "^8.0.1",
+    "@maxions/db": "workspace:*",
+    "@maxions/orchestrator": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
+    "bun-types": "latest"
+  }
+}

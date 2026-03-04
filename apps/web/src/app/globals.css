@@ -1,0 +1,14 @@
+/* biome-ignore lint/suspicious/noUnknownAtRules: tailwind directives */
+@tailwind base;
+/* biome-ignore lint/suspicious/noUnknownAtRules: tailwind directives */
+@tailwind components;
+/* biome-ignore lint/suspicious/noUnknownAtRules: tailwind directives */
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next"
+  ],
+  "files": {
+    "includes": [
+      "!node_modules",
+      "!dist",
+      "!.next",
+      "!.turbo",
+      "!*.generated.*",
+      "!bun.lock"
+    ]
+  },
+  "linter": {
+    "rules": {
+      "performance": {
+        "noBarrelFile": "off"
+      }
+    }
+  }
+}

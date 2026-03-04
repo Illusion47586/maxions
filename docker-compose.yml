@@ -1,0 +1,33 @@
+services:
+  maxions-api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    container_name: maxions-api
+    ports:
+      - "${API_PORT:-3000}:3000"
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DATABASE_URL=file:/data/maxions.db
+      - TARGET_REPO=${TARGET_REPO:-Illusion47586/isol8}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - maxions-data:/data
+    restart: unless-stopped
+
+  maxions-web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    container_name: maxions-web
+    ports:
+      - "${WEB_PORT:-3002}:3002"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:${API_PORT:-3000}
+      - API_URL=http://maxions-api:3000
+    depends_on:
+      - maxions-api
+    restart: unless-stopped
+
+volumes:
+  maxions-data:
